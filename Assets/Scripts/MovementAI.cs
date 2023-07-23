@@ -1,4 +1,3 @@
-// LocomotionSimpleAgent.cs
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -6,42 +5,35 @@ using UnityEngine.AI;
 [RequireComponent(typeof(Animator))]
 public class MovementAI : MonoBehaviour
 {
-    public float area = 30;
-    public float xCenter = 0;
-    public float zCenter = 0;
+    public float area = 30; // Radius of the walkable area
+    public float xCenter = 0; // x coordinate of the area
+    public float zCenter = 0; // z coordinate of the area
 
     private Animator anim;
     private NavMeshAgent agent;
 
+    // Useful for debug
+    public bool velocity;
+    public bool path;
+
+    // Default methods
+
     void Start()
     {
-        // Animator
         anim = GetComponent<Animator>();
-        anim.applyRootMotion = true;
-
-        // NavMesh Agent
         agent = GetComponent<NavMeshAgent>();
-        agent.speed = 1;
-        agent.radius = .75f;
-        agent.acceleration = 8;
 
-        // Don’t update position automatically
-        agent.updatePosition = false;
-        agent.updateRotation = true;
-
-        Vector3 newPos = RandomNavSphere(transform.position, area, -1);
-        agent.SetDestination(newPos);
+        InitSettings();
     }
 
     void Update()
     {
-        anim.SetFloat("SpeedMultiplier", agent.desiredVelocity.magnitude);
-
-        if(agent.remainingDistance < 1)
+        if(agent.remainingDistance <= agent.stoppingDistance)
         {
-            Vector3 newPos = RandomNavSphere(transform.position, area, -1);
-            agent.SetDestination(newPos);
+            agent.destination = RandomNavSphere(transform.position, area);
         }
+
+        anim.SetFloat("SpeedMultiplier", agent.velocity.magnitude);
     }
 
     void OnAnimatorMove()
@@ -53,7 +45,46 @@ public class MovementAI : MonoBehaviour
         agent.nextPosition = transform.position;
     }
 
-    Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
+    void OnDrawGizmos()
+    {
+        if (velocity)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(transform.position, transform.position + agent.velocity);
+        }
+
+        if (path)
+        {   
+            Gizmos.color = Color.black;
+            var agentPath = agent.path;
+            Vector3 prevCorner = transform.position;
+            foreach (var corner in agentPath.corners)
+            {
+                Gizmos.DrawLine(prevCorner, corner);
+                Gizmos.DrawSphere(corner, 0.1f);
+                prevCorner = corner;
+            }
+        }
+    }
+
+    // Settings and Random Point
+
+    void InitSettings()
+    {
+        #region Agent Settings
+        agent.speed = 1;
+        agent.angularSpeed = 720;
+        agent.radius = .75f;
+        agent.acceleration = 5;
+        agent.stoppingDistance = 1;
+
+        // Disable position update to allow synchronization between agent and animator
+        agent.updatePosition = false;
+        agent.updateRotation = true;
+        #endregion
+    }
+
+    Vector3 RandomNavSphere(Vector3 origin, float dist)
     {
         Vector3 randDirection = Random.insideUnitSphere * dist;
 
@@ -64,7 +95,7 @@ public class MovementAI : MonoBehaviour
 
         NavMeshHit navHit;
 
-        NavMesh.SamplePosition(randDirection, out navHit, dist, layermask);
+        NavMesh.SamplePosition(randDirection, out navHit, dist, -1);
 
         return navHit.position;
     }

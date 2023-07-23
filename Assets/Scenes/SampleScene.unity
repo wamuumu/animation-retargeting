@@ -544,7 +544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   avatar: {fileID: 11453600, guid: d1ad4483f16e2ec4486847abda48683f, type: 3}
   Randomizer: {fileID: 11400000, guid: a94e15a57b385cd4fb1551ea2582187a, type: 2}
-  count: 50
+  count: 10
   range: 15
   posx: 0
   posz: 0

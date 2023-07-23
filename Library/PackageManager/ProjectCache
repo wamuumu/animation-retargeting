@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638247467770336722
-    m_Hash: 2445004538
+      ticks: 638257103697084272
+    m_Hash: 4240984012
   m_LockFileStatus:
     m_FilePath: C:/Users/Matteo/Documents/GitHub/Unity/Animation Retargeting/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638247467770416504
-    m_Hash: 1468255061
+      ticks: 638257103697203951
+    m_Hash: 200981212
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -22,12 +22,12 @@ m_LocalPackages:
 m_ProjectPath: C:/Users/Matteo/Documents/GitHub/Unity/Animation Retargeting/Packages
 m_EditorVersion: 2021.3.23f1 (213b516bf396)
 m_ResolvedPackages:
-- packageId: com.unity.ai.navigation@1.0.0-exp.4
+- packageId: com.unity.ai.navigation@1.1.4
   testable: 0
   isDirectDependency: 1
-  version: 1.0.0-exp.4
+  version: 1.1.4
   source: 1
-  resolvedPath: C:\Users\Matteo\Documents\GitHub\Unity\Animation Retargeting\Library\PackageCache\com.unity.ai.navigation@1.0.0-exp.4
+  resolvedPath: C:\Users\Matteo\Documents\GitHub\Unity\Animation Retargeting\Library\PackageCache\com.unity.ai.navigation@1.1.4
   assetPath: Packages/com.unity.ai.navigation
   name: com.unity.ai.navigation
   displayName: AI Navigation
@@ -36,7 +36,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: asset
+  type: assets
   description: High-level NavMesh components for building and using NavMeshes at
     runtime and at edit time.
   status: 0
@@ -76,13 +76,13 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 0
   isAssetStorePackage: 0
-  datePublishedTicks: 637631812400000000
-  documentationUrl: 
+  datePublishedTicks: 638224218100000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.ai.navigation@1.1/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.ai.navigation.git
-    revision: e38a28933e4513afa2b6084c2948852bd9daad56
+    revision: 3e8d494400ccac6cbd90ee1b474470f4b1299bfa
     path: 
   unityLifecycle:
     version: 
@@ -790,6 +790,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.2
     - 3.2.0-pre.3
     - 3.2.0-pre.4
+    - 3.2.0-pre.5
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     compatible:
@@ -798,6 +799,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.2
     - 3.2.0-pre.3
     - 3.2.0-pre.4
+    - 3.2.0-pre.5
     verified: 3.0.6
   dependencies:
   - name: com.unity.ugui
@@ -1026,6 +1028,7 @@ m_ResolvedPackages:
     all:
     - 1.0.0
     - 3.0.0-exp.1
+    - 3.0.0-exp.3
     compatible:
     - 1.0.0
     verified: 1.0.0

@@ -336,11 +336,11 @@
 -r:"C:/Users/Matteo/Documents/GitHub/Unity/Animation Retargeting/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
-"Library/PackageCache/com.unity.ai.navigation@1.0.0-exp.4/Runtime/HelpUrls.cs"
-"Library/PackageCache/com.unity.ai.navigation@1.0.0-exp.4/Runtime/NavMeshLink.cs"
-"Library/PackageCache/com.unity.ai.navigation@1.0.0-exp.4/Runtime/NavMeshModifier.cs"
-"Library/PackageCache/com.unity.ai.navigation@1.0.0-exp.4/Runtime/NavMeshModifierVolume.cs"
-"Library/PackageCache/com.unity.ai.navigation@1.0.0-exp.4/Runtime/NavMeshSurface.cs"
+"Library/PackageCache/com.unity.ai.navigation@1.1.4/Runtime/HelpUrls.cs"
+"Library/PackageCache/com.unity.ai.navigation@1.1.4/Runtime/NavMeshLink.cs"
+"Library/PackageCache/com.unity.ai.navigation@1.1.4/Runtime/NavMeshModifier.cs"
+"Library/PackageCache/com.unity.ai.navigation@1.1.4/Runtime/NavMeshModifierVolume.cs"
+"Library/PackageCache/com.unity.ai.navigation@1.1.4/Runtime/NavMeshSurface.cs"
 -langversion:9.0
 
 /deterministic

@@ -20,6 +20,7 @@ MonoBehaviour:
   loopTime: 1
   loopPose: 1
   lockRootRotation: 1
-  heightOffset: -0.0375
+  lockRootHeightY: 1
+  keepOriginalPositionY: 0
+  heightFromFeet: 1
   renameClips: 1
-  forceEditorApply: 1
